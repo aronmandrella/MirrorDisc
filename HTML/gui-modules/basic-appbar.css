@@ -1,0 +1,59 @@
+/* Kolory */
+.basic-appbar{
+    --surface-hsl: var(--basic-appbar-surface-hsl, 0, 0%, 100%);
+    --accent-hsl: var(--basic-appbar-accent-hsl, 225, 40%, 25%);
+}
+
+.basic-appbar{
+    font-size: 15px;
+    background-color: hsl(var(--surface-hsl));
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    border: 0 solid hsla(var(--accent-hsl), 0.2);
+    border-bottom-width: 0px;
+    border-top-width: 0px;
+}
+
+.basic-appbar-button{
+    background: none; border: none;
+    color: hsl(var(--accent-hsl));
+
+    text-align: center;
+    font-size: 0.75em;
+    padding: 0.8em 1.2em;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: 500;
+    margin: 0;
+    cursor: pointer;
+
+    outline: none;
+}
+.basic-appbar-button-icon{
+    display: block;
+    font-size: 2em;
+    margin-bottom: 0.2em;
+}
+.basic-appbar-button-text{
+
+}
+.basic-appbar-button:hover{
+    background: hsla(var(--accent-hsl), 0.1);
+}
+.basic-appbar-button:active{
+    background: hsla(var(--accent-hsl), 0.15);
+}
+
+.basic-appbar-button:last-child{
+    margin-left: auto;
+}
+.basic-appbar-button:disabled{
+    cursor: default;
+    background: none;
+    color: hsla(var(--accent-hsl), 0.4);
+    text-shadow: none;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+	<title>MirrorDisc</title>
+
+	<!-- ............................. WEBFONTY ........................................ -->
+
+	<!-- Fontawesome Free -->
+	<link rel="stylesheet" href="webfonts/Fontawesome Free v5.8.1/css/all.css">
+	<!-- Moje logo -->
+	<link rel="stylesheet" href="webfonts/Am-Logo/am-logo.css">
+
+	<!-- ......................... STYLE DODATKOWYCH BIBLIOTEK ......................... -->
+
+	<link rel="stylesheet" href="libs/normalize.css">
+	<!-- iOsCheckbox -->	
+	<link rel="stylesheet" href="libs/el-checkbox.css">
+	<!-- Toast -->
+	<link rel="stylesheet" href="libs/iziToast.css">
+	<!-- Animacje -->
+    <link rel="stylesheet" href="libs/animate.css">
+    
+    <!-- Material Style UI https://github.com/finnhvman/matter/blob/master/README.md -->
+    <link rel="stylesheet" href="libs/matter.css">
+
+    <!-- ......................... STYLE STRONY ......................... -->
+    
+    <link rel="stylesheet" href="style/__sync-folders2.css">
+
+    <link rel="stylesheet" href="_global.css"> 
+    <link rel="stylesheet" href="index.css"> 
+    <link rel="stylesheet" href="style/basic-table.css">
+    <link rel="stylesheet" href="style/flink-table.css">
+    <link rel="stylesheet" href="style/ftransfer-table.css">
+</head>
+
+<body ondragstart="return false;" ondrop="return false;">
+    <div class="sync-folders-row" style="display: none">
+        <div class="folder-wrapper">
+            <div class="folder">
+                <div class="folder-disc">C:\</div>
+                <div class="folder-icon"><i class="fas fa-folder"></i></div>
+                <div class="folder-name">Moje Kody i Pliki Źródłowe</div>
+            </div>
+            <div class="folder-error-background">
+                <div class="folder-error-icon"><i class="fas fa-folder"></i>?!</div>
+                <div class="folder-error-text">Zła ścieżka</div>
+            </div>
+        </div>
+        <div class="folder-separator-arrow">
+                <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="folder-wrapper">
+            <div class="folder">
+                <div class="folder-disc">D:\</div>
+                <div class="folder-icon"><i class="fas fa-folder"></i></div>
+                <div class="folder-name">Moje Kody i Pliki Źródłowe</div>
+            </div>
+            <div class="folder-error-background">
+                <div class="folder-error-icon"><i class="fas fa-folder"></i>?!</div>
+                <div class="folder-error-text">Zła ścieżka</div>
+            </div>
+        </div>
+        <div class="folder-wrapper">
+            <div class="folder">
+                <div class="folder-disc">F:\</div>
+                <div class="folder-icon"><i class="fas fa-folder"></i></div>
+                <div class="folder-name">Moje Kody i Pliki Źródłowe</div>
+            </div>
+            <div class="folder-error-background">
+                <div class="folder-error-icon"><i class="fas fa-folder"></i>?!</div>
+                <div class="folder-error-text">Zła ścieżka</div>
+            </div>
+        </div>
+        <button class="folder-add-button"><i class="fas fa-plus"></i></div>
+    </div>
+
+	<!-- ......................... SKRYPTY JS DODATKOWYCH BIBLIOTEK ......................... -->
+
+	<!-- Rozpoczęcie dodawania skrytptów (kompatybilność z Electron JS) -->
+	<script>
+		if (typeof module === 'object') {window.module = module; module = undefined;}
+	</script>
+
+	<!-- Ciasteczka -->
+	<script src="libs/js-cookie.js"></script>
+	<!-- Toast -->
+	<script src="libs/iziToast.min.js"></script>
+    <!-- Sortowanie -->
+    <script src="libs/Sortable.min.js"></script>
+
+    <!-- Dodatkowe funkcje dla tablic -->
+    <script src="include/TypeExtended_Array.js"></script>
+
+	<!-- Zakończenie dodawania skrytptów (kompatybilność z Electron JS) -->
+	<script>
+		if (window.module) module = window.module;
+	</script>
+
+	<!-- ......................... SKRYPTY JS STRONY ......................... -->
+	
+    <script src="index.js"></script>
+</body>
+</html>

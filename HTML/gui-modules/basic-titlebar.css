@@ -1,0 +1,126 @@
+/* Kolory */
+.basic-titlebar{
+    --surface-hsl: var(--basic-titlebar-surface-hsl, 0, 0%, 100%);
+    --accent-hsl: var(--basic-titlebar-accent-hsl, 225, 40%, 25%);
+}
+
+.basic-titlebar{
+    font-size: 16px;
+
+    color: hsl(var(--accent-hsl));
+    background-color: hsl(var(--surface-hsl));
+    
+    display: flex;
+    align-items: center;
+}
+/*
+.basic-titlebar[data-window-focused="false"]{
+    color: hsla(var(--accent-hsl), 0.4);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+}*/
+.basic-titlebar[data-window-focused="false"]{
+    color: hsla(var(--accent-hsl), 0.4);
+}
+/*
+.basic-titlebar[data-window-focused="true"]{
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+}*/
+
+
+.basic-titlebar > *{
+    flex-grow: 0; flex-shrink: 0;
+}
+.basic-titlebar > .basic-titlebar-drag-area{
+    flex-grow: 1; flex-shrink: 1;
+}
+
+/* Część którą można złapać by przemieścić okienko*/
+.basic-titlebar-drag-area{
+    display: flex;
+    align-items: center;
+    -webkit-app-region: drag;
+    margin: 2px;
+    height: calc(100% - 2px);
+}
+.basic-titlebar-drag-area > *{
+    flex-grow: 0; flex-shrink: 0;
+}
+.basic-titlebar-drag-area > .basic-titlebar-text{
+    flex-grow: 1; flex-shrink: 1;
+}
+
+/* Ikonka po lewej */
+.basic-titlebar-icon{
+    padding: 0 0.6em;
+}
+
+/* Tekst na górnym pasku (nazwa apliakcji itd) */
+.basic-titlebar-text{
+    font-size: 0.7em;
+    display: flex;
+}
+.basic-titlebar-title{
+    flex-grow: 0; flex-shrink: 0;
+    font-weight: 700;
+}
+.basic-titlebar-info{
+    flex-grow: 1; flex-shrink: 1;
+    margin-left: 1em;
+    opacity: 0.8;
+}
+
+
+/* Guziki po prawej */
+.basic-titlebar-window-buttons{
+    margin-left: auto;
+    -webkit-app-region: no-drag;
+
+    display: flex;
+}
+
+.basic-titlebar-button{
+    background: none; border: none;
+    color: inherit; font-family: inherit;
+    line-height: 1.8em;
+    width: 2.8em;
+    margin: 0;
+    cursor: pointer;
+    outline: none;
+}
+.basic-titlebar-button:hover{
+    background-color: hsla(var(--accent-hsl), 0.1);
+}
+.basic-titlebar-button:active{
+    background-color: hsla(var(--accent-hsl), 0.2);
+}
+.basic-titlebar-button i{
+    font-size: 0.65em;
+}
+
+.basic-titlebar-button[data-action="close"] i{
+    font-size: 0.8em;
+}
+.basic-titlebar-button[data-action="close"]:hover{
+    background-color: hsl(0, 95%, 40%);
+    color: #eee;
+}
+.basic-titlebar-button[data-action="close"]:active{
+    background-color: hsl(0, 100%, 45%);
+    color: #fff;
+}
+
+/*Zablokowane guziki */
+.basic-titlebar-button:disabled{
+    opacity: 0.4;
+    cursor: default;
+    color: inherit;
+    background-color: transparent;
+}
+.basic-titlebar-button:disabled:hover{
+    color: inherit;
+    background-color: transparent;
+}
+.basic-titlebar-button:disabled:active{
+    color: inherit;
+    background-color: transparent;
+}

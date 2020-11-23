@@ -1,0 +1,43 @@
+/* Tablica definiowania połączeń miedzy folderami */
+.ctx-menu{
+    --surface-hsl: var(--ctx-menu-surface-hsl, 0, 0%, 100%);
+    --text-hsl: var(--ctx-menu-text-hsl, 0, 0%, 10%);
+
+    font-size: 12px;
+
+    background-color: hsl(var(--surface-hsl));
+    
+    padding: 0.5em 0;
+
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.3);
+    z-index: 200;
+}
+
+/* Reset ustawień guzików */
+button.ctx-menu-label{
+    display: block;
+    outline: none;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+}
+.ctx-menu-label{
+    color: hsl(var(--text-hsl));
+    white-space: nowrap;
+    padding: 0.5em 0.5em;
+    cursor: pointer;
+}
+.ctx-menu-label:hover{
+    background-color: hsla(var(--text-hsl), 0.07);
+}
+.ctx-menu-label:active{
+    background-color: hsla(var(--text-hsl), 0.12);
+}
+.ctx-menu-label:disabled{
+    color: hsla(var(--text-hsl),0.3);
+}
+.ctx-menu-label:disabled:hover{
+    cursor: default;
+    background-color: transparent;
+}

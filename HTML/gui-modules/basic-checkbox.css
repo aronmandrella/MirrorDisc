@@ -1,0 +1,52 @@
+/* Prosty checkbox */
+.basic-checkbox {
+    --body-hsl: var(--basic-checkbox-body-hsl, 221, 80%, 50%);
+    --mark-hsl: var(--basic-checkbox-mark-hsl, 0, 0%, 100%);
+
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    height: 1em; width: 1em;
+    overflow: hidden;
+    border-radius: 5px;
+    margin: auto;
+}
+.basic-checkbox input {
+    display: none;
+}
+.basic-checkbox .checkmark {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0; left: 0;
+    height: 1em; width: 1em;
+    background-color: transparent;
+    border: 2px solid hsl(var(--body-hsl));
+    border-radius: inherit;
+    transition: all 0.3s;
+}
+.basic-checkbox:hover input ~ .checkmark {
+    background-color: hsla(var(--body-hsl), 0.2);
+}
+.basic-checkbox input:checked ~ .checkmark {
+    background-color: hsl(var(--body-hsl));
+}
+.basic-checkbox .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.basic-checkbox .checkmark:after {
+    display: block;
+    opacity: 0;
+    left: 0.26em; top: 0.1em;
+    width: 0.2em; height: 0.45em;
+    border: solid hsl(var(--mark-hsl));
+    border-width: 0 2px 2px 0;
+    transform: rotate(70deg) scale(1.5);
+    transition: all 0.5s;
+}
+.basic-checkbox input:checked ~ .checkmark:after {
+    opacity: 1;
+    transform: rotate(45deg);
+}

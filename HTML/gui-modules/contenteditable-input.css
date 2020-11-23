@@ -1,0 +1,22 @@
+/* Kolory */
+.contenteditable-input{
+    --accent-hsl: var(--contenteditable-input-accent-hsl, 210, 25%, 25%);
+    --danger-hsl:   340, 100%, 30%;
+
+    transition: all 1s;
+}
+.contenteditable-input:not(.disabled){
+    outline: none;
+    cursor: text;
+}
+.contenteditable-input.disabled{
+    opacity: 0.5;
+}
+.contenteditable-input.invalid-input{
+    color: hsl(var(--danger-hsl));
+    box-shadow: inset 0 0 0.5em hsla(var(--danger-hsl), 0.4);
+}
+.contenteditable-input::selection{
+    background: hsl(var(--accent-hsl), 0.3);
+    color: inherit;
+}

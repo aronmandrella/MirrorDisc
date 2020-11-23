@@ -1,0 +1,23 @@
+/* Tablica definiowania połączeń miedzy folderami */
+.flink-table{
+    font-size: 13px; 
+}
+
+/* Ustawienia checkboxa w tabeli */
+.flink-table-row[data-label="danger"] .basic-checkbox{
+    --basic-checkbox-body-hsl: var(--danger-hsl);
+    --basic-checkbox-mark-hsl: var(--surface-hsl);
+}
+
+/* Styl nazw folderów */
+.flink-table-path{
+    outline: 0px solid transparent;
+    cursor: text;
+}
+.flink-table-path:empty::before{
+    content: attr(data-placeholder);
+    opacity: 0.4;
+}
+.flink-table-path.flink-wrong-path{
+    color: hsl(var(--danger-hsl));
+}

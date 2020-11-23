@@ -1,0 +1,183 @@
+/* Animacje */
+.progress-dialog-blinking {
+    animation: progress-dialog-blinking 2s linear infinite; }
+@keyframes progress-dialog-blinking {
+    50% { opacity: 0.3; } }
+
+
+/* Kolory */
+.progress-dialog{
+    --surface-hsl: var(--progress-dialog-surface-hsl, 0, 0%, 100%);
+    --accent-hsl: var(--progress-dialog-accent-hsl, 225, 40%, 25%);
+
+    --safe-hsl:     155, 100%, 30%;
+    --warning-hsl:  60, 100%, 30%;
+    --danger-hsl:   335, 100%, 30%;
+}
+
+/* Główny wrapper */
+.progress-dialog{
+    width: 100%;
+    height: 100%;
+
+    font-size: 14px;
+    color: hsl(var(--accent-hsl));
+
+    background-color: hsl(var(--surface-hsl));
+    
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+.progress-dialog > *{
+    flex-shrink: 0; flex-grow: 0;
+}
+.progress-dialog > *:last-child{
+    flex-shrink: 1; flex-grow: 1;
+}
+
+
+/* Typy kolorów */
+.progress-dialog *[data-color="default"]{
+    color: hsl(var(--accent-hsl));
+}
+.progress-dialog *[data-color="transparent"]{
+    color: hsl(var(--accent-hsl), 0.7);
+}
+.progress-dialog *[data-color="safe"]{
+    color: hsl(var(--safe-hsl));
+}
+.progress-dialog *[data-color="danger"]{
+    color: hsl(var(--danger-hsl));
+}
+
+
+/* Napis nad całym dialogiem */
+.progress-dialog-title{
+    font-size: 1.2em;
+    background-color: hsl(var(--accent-hsl));
+    color: hsl(var(--surface-hsl));
+    text-align: center;
+    font-weight: 500;
+    padding: 1em;
+    transition: all 1s;
+}
+
+
+/* Segment dialogu */
+.progress-dialog-segment{
+    padding: 1em 1.5em;
+    font-size: 13px;
+
+    border: 0 solid hsla(var(--accent-hsl), 0.5);
+    border-bottom-width: 1px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.progress-dialog-button-segment{
+    border-bottom-width: 0px;
+    border-top-width: 1px;
+    padding: 0;
+    background-color: hsla(var(--accent-hsl), 0.1);
+
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4); 
+
+    position: relative;
+    z-index: 100;
+}
+.progress-dialog-segment:last-of-type{
+    border-bottom-width: 0px;
+}
+.progress-dialog-segment-header{
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+    text-align: left;
+}
+.progress-dialog-segment-header::after{
+    content: ":";
+}
+
+
+/* Wrapper */
+.progress-dialog-wrapper{
+    max-height: 350px;
+    overflow-y: auto;
+}
+/* Ustawienia scrollbara */
+.progress-dialog-wrapper::-webkit-scrollbar {
+    width: 8px;
+    background: black;
+} 
+.progress-dialog-wrapper::-webkit-scrollbar-track {
+    background: hsl(var(--surface-hsl));
+}
+.progress-dialog-wrapper::-webkit-scrollbar-thumb {
+    background: hsla(var(--accent-hsl), 1);
+    border: 0px solid hsl(var(--surface-hsl));
+    border-width: 2px 2px;
+}
+
+
+/* Pola tekstowe na różne statystyki */
+.progress-dialog-progress-field{
+    display: flex;
+    line-height: 1.5em;
+    white-space: nowrap;
+}
+.progress-dialog-progress-field-title::after{
+    content: ":";
+}
+.progress-dialog-progress-field-value{
+    margin-left: 0.5em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* Prosty progressbar */
+.progress-dialog-progressbar{
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 1em;
+    margin-top: 0.5em;
+    border-radius: 0.25em;
+    background-color: hsl(var(--accent-hsl), 0.1);
+    border: 1px solid hsl(var(--accent-hsl), 0.6);
+}
+.progress-dialog-progressbar-inner{
+    height: 100%;
+    width: 0%;
+    background-color: hsl(var(--safe-hsl));
+    transition: all 0.25s;
+}
+
+/* Wyśrodkowana wiadomość */
+.progress-dialog-message{
+    text-align: center;
+    margin-bottom: 0.5em;
+    font-weight: 500;
+}
+
+/* Szczegóły błędów */
+.progress-dialog-message-details{
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: 0.35em;
+}
+.progress-dialog-message-details:hover{
+    opacity: 0.7;
+}
+.progress-dialog-message-details:active{
+    opacity: 0.4;
+}
+
+/* Guziki na koncu */
+.progress-dialog-segment:last-of-type{
+    min-height: 60px;
+}
+.progress-dialog-buttons{
+    text-align: center;
+}

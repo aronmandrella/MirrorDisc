@@ -1,0 +1,71 @@
+.ftransfer-table{
+    font-size: 11px; 
+}
+
+/* Wartości dla pustych komórek */
+.ftransfer-table .basic-table-col-text:empty::before{
+    content: "—";
+}
+.ftransfer-table .basic-table-col-size:empty::before{
+    content: "—";
+}
+.ftransfer-table .basic-table-col-time:empty::before{
+    content: "—";
+}
+
+
+/* Klasy kolorów dla spanów */
+.ftransfer-color-safe{
+    color: hsl(var(--safe-hsl));
+    font-weight: 700;
+}
+.ftransfer-color-neutral{
+    color: hsl(var(--neutral-hsl));
+    font-weight: 700;
+}
+.ftransfer-color-neutral2{
+    color: hsl(var(--neutral2-hsl));
+    font-weight: 700;
+}
+.ftransfer-color-warning{
+    color: hsl(var(--warning-hsl));
+    font-weight: 700;
+}
+.ftransfer-color-danger{
+    color: hsl(var(--danger-hsl));
+    font-weight: 700;
+}
+
+/* Ogólny styl dla nazw plików i folderów */
+.ftransfer-filename{
+}
+
+/* Styl dla ścieżek które można otworzyć */
+.ftransfer-table td{
+    transition: none;
+}
+.ftransfer-table td[data-shell]{
+    cursor: pointer;
+}
+.ftransfer-table td[data-shell]:hover span{
+    text-decoration: underline;
+}
+.ftransfer-table td[data-shell]:active{
+    opacity: 0.5;
+}
+
+/* Ukrycie strzałki dla podglądu folderu */
+.ftransfer-table tr[data-label="default"] .basic-table-col-arrow *{
+    display: none;
+}
+
+/* PRawdziwe ikonki plików */
+.file-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.file-icon img{
+    width: 65%;
+    height: 65%;
+}

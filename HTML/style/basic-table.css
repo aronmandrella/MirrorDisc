@@ -1,0 +1,297 @@
+/* Główne kolory tabeli */
+.basic-table-with-pagination{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ustawienia numeracji tabeli */
+.basic-table-with-pagination .basic-pagination{
+    flex-grow: 0; flex-shrink: 0;
+}
+.basic-table-with-pagination .basic-table{
+    flex-grow: 1; flex-shrink: 1;
+}
+
+/* Ustawienia kolorów w formacie hsv */
+.basic-table{
+    --surface-hsl: var(--basic-table-surface-hsl, 0, 0%, 100%);
+    --accent-hsl: var(--basic-table-accent-hsl, 225, 40%, 25%);
+
+    --safe-hsl:     140, 100%, 30%;
+    --neutral-hsl:  200, 60%, 40%;
+    --neutral2-hsl: 200, 60%, 40%;
+    --warning-hsl:  50, 100%, 30%;
+    --danger-hsl:   340, 100%, 30%;
+}
+
+/* Typy kolorów */
+.basic-table *[data-color="default"]{
+    color: hsl(var(--accent-hsl));
+}
+.basic-table *[data-color="transparent"]{
+    color: hsl(var(--accent-hsl), 0.7);
+}
+.basic-table *[data-color="safe"]{
+    color: hsl(var(--safe-hsl));
+}
+.basic-table *[data-color="neutral"]{
+    color: hsl(var(--neutral-hsl));
+}
+.basic-table *[data-color="neutral2"]{
+    color: hsl(var(--neutral2-hsl));
+}
+.basic-table *[data-color="danger"]{
+    color: hsl(var(--danger-hsl));
+}
+
+
+/* Ustawienie scrollowania */
+.basic-table{
+    overflow-y: auto;
+}
+
+/* Ustawienia scrollbara */
+.basic-table::-webkit-scrollbar {
+    width: 12px;
+    background: black;
+} 
+.basic-table::-webkit-scrollbar-track {
+    background: hsl(var(--accent-hsl));
+}
+.basic-table::-webkit-scrollbar-thumb {
+    background: hsla(var(--surface-hsl), 0.4);
+    border: 3px solid hsl(var(--accent-hsl));
+}
+
+
+/* Tablica definiowania połączeń miedzy folderami */
+.basic-table table{
+    font-size: inherit;
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: hsl(var(--surface-hsl));
+}
+
+/* Numeracja wierszy */
+.basic-table tr:nth-child(2){ counter-reset: rowNumber; }
+.basic-table tr{ counter-increment: rowNumber; }
+.basic-table tr > td.basic-table-col-id:empty::before{
+    content: counter(rowNumber);
+}
+
+/* Padding komórek */
+.basic-table td, .basic-table th {
+    box-sizing: border-box;
+    padding: 0.7em;
+    border: none;
+    line-height: 1.5em;
+}
+
+/* Ustawienia przejść */
+.basic-table td, .basic-table th{
+    transition: all 0.5s;
+}
+
+/* Rozmiary kolumn */
+.basic-table tr > *.basic-table-col-id{
+    width: 2.5em;
+    padding-left: 0; padding-right: 0;
+    text-align: center;
+}
+
+/* Rozmiary kolumn */
+.basic-table tr > *.basic-table-col-basic-checkbox{
+    width: 3em;
+    padding: 0;
+}
+.basic-table tr > *.basic-table-col-sort{
+    width: 2em;
+    padding: 0;
+    text-align: center;
+}
+.basic-table tr > *.basic-table-col-size{
+    width: 8em;
+}
+.basic-table tr > *.basic-table-col-time{
+    width: 5.5em;
+}
+.basic-table tr > *.basic-table-col-arrow{
+    width: 4em;
+    padding: 0;
+    text-align: center;
+}
+.basic-table tr > *.basic-table-col-date{
+    width: 10em;
+}
+.basic-table tr > *.basic-table-col-icon{
+    width: 3em;
+    padding: 0;
+    text-align: center;
+}
+.basic-table td i{
+    font-size: 1.5em;
+    position: relative;
+    top: 0.1em;
+}
+.basic-table tr td:first-child i{
+    left: 0.1em;
+}
+
+
+/* Domyślne tło wiersza w zalerzności od sytuacji*/
+.basic-table tr{
+    background-color: hsla(var(--accent-hsl), 0);
+}
+.basic-table tr:nth-child(even){
+    background-color: hsla(var(--accent-hsl), 0.05);
+}
+/*
+.basic-table tr:hover {
+    background-color: hsla(var(--accent-hsl), 0.15);
+}
+*/
+
+/* Style zaznaczania */
+.basic-table tr:first-child *{
+    user-select: none;
+}
+.basic-table *::selection{
+    background: hsl(var(--accent-hsl), 0.3);
+    color: inherit;
+}
+
+/* Style komórek */
+.basic-table th {
+    text-align: left;
+    background-color: hsl(var(--accent-hsl));
+    color: hsl(var(--surface-hsl));;
+    font-weight: 500;
+}
+.basic-table td{
+    color: hsl(var(--accent-hsl));
+    font-weight: 500;
+}
+
+/* Sticky nagłówek */
+.basic-table th {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Ustawienia checkboxa w tabeli */
+.basic-table tr .basic-checkbox{
+    --basic-checkbox-body-hsl: var(--accent-hsl);
+    --basic-checkbox-mark-hsl: var(--surface-hsl);
+}
+
+/* Ustawienia guzików do sortowania */
+.basic-table-sort{
+     /* Trochę może psuć tabelę jeśli wyjdzie*/
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+}
+.basic-table-sort-button{
+    cursor: pointer;
+    margin-right: 0.5em;
+}
+.basic-table-sort-button:hover{
+    opacity: 0.7;
+}
+.basic-table-sort-button:active{
+    opacity: 0.5;
+}
+.basic-table-sort-button.disabled{
+    opacity: 0.2;
+    cursor: default;
+}
+
+/* Ucinanie zbyt długiego tekstu,
+którego nie da się przeżucić do nowej lini */
+.basic-table-col-text{
+    word-break: break-word;
+}
+
+
+/* Kolorowe kreski i gradienty zalerzne od wartości label rzędu */
+.basic-table-row[data-label="info"]{
+    --row-hsl: var(--accent-hsl), 0.6;
+}
+.basic-table-row[data-label="safe"]{
+    --row-hsl: var(--safe-hsl);
+}
+.basic-table-row[data-label="neutral"]{
+    --row-hsl: var(--neutral-hsl);
+}
+.basic-table-row[data-label="neutral2"]{
+    --row-hsl: var(--neutral2-hsl);
+}
+.basic-table-row[data-label="warning"]{
+    --row-hsl: var(--warning-hsl);
+}
+.basic-table-row[data-label="danger"]{
+    --row-hsl: var(--danger-hsl);
+}
+.basic-table-row[data-label="default"]{
+    --row-hsl: 0, 0%, 0%;
+}
+/*
+.basic-table-row{
+    background-image: linear-gradient(to right, hsla(var(--row-hsl), 0.05), transparent);
+}
+*/
+.basic-table-row > td:first-child{
+   border: 0 solid hsl(var(--row-hsl));
+   border-left-width: 15px;
+}
+.basic-table-row[data-label="default"],
+.basic-table-row:not([data-label]){
+    background-image: none;
+}
+.basic-table-row[data-label="default"] > td:first-child,
+.basic-table-row:not([data-label]) > td:first-child{
+    border-color: transparent;
+}
+/* Komórki z data-sort można kliknać */
+.basic-table th[data-sort]{
+    cursor: pointer;
+}
+
+
+/* Wyświetlanie tabeli w trybie placeholdera 
+ tz ostatni rząd zajmie całą oferowaną powieszchnię w pionie */
+ .basic-table-placeholder-mode{
+    overflow-y: hidden;
+}
+.basic-table-placeholder-mode table{
+    height: 101%;
+    background-color: hsla(var(--accent-hsl), 0.05);
+}
+.basic-table-placeholder-mode tr:last-child{
+    height: 100%;
+    background-color: transparent;
+    text-align: center;
+    font-size: 1.4em;
+    opacity: 0.4;
+}
+.basic-table-placeholder-icon{
+    position: relative;
+    top: -1em;
+    opacity: 0.4;
+}
+.basic-table-placeholder-text{
+    position: relative;
+    top: -1em;
+    left: 0.5em;
+    margin-top: 1.2em;
+    font-weight: 400;
+}
+.basic-table-placeholder-icon i{
+    font-size: 6em !important;
+}

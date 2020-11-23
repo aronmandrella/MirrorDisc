@@ -1,0 +1,134 @@
+:root {
+    font-family: 'Roboto', sans-serif;
+
+
+}
+
+.sync-folders-row{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    background: hsl(225, 25%, 90%);
+    border: 1px solid hsl(225, 25%, 70%);
+    padding: 0.5em;
+}
+
+.folder-separator-arrow{
+    font-size: 2em;
+    color: hsl(225, 40%, 35%);
+    margin: 0 0.5em;
+    margin-top: 0.6em;
+}
+.sync-folders-row .folder-wrapper{
+    margin-right: 1em;
+}
+.sync-folders-row .folder-wrapper:first-child,
+.sync-folders-row .folder-wrapper:last-child{
+    margin-right: 0;
+}
+.folder-add-button{
+    font-size: 2em;
+    background: none;
+    color: hsl(225, 40%, 35%);
+    border: none;
+    margin-top: 0.6em;
+}
+
+.folder-wrapper{
+    font-size: 0.9em;
+    position: relative;
+    display: inline-block;
+    padding: 0.5em;
+    border-radius: 15px;
+}
+
+
+.folder-error-background{
+    transition: all 0.5s;
+    opacity: 0;
+
+}   
+.folder-error-icon{
+    transition: all 0.5s;
+    transform: rotate(45deg);
+}
+.folder{
+    transition: all 0.5s;
+    opacity: 1;
+}
+.folder-wrapper:hover .folder-error-background{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.folder-wrapper:hover .folder-error-background *{
+    transform: none;
+}
+.folder-wrapper:hover .folder{
+    opacity: 0;
+}
+
+.folder-error-background{
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.folder-error-icon{
+    font-size: 2.2em;
+    font-weight: 700;
+    color: hsl(225, 40%, 35%);
+}
+.folder-error-icon i{
+    margin-right: 0.1em;
+}
+.folder-error-text{
+    margin-top: 0.3em;
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.8em;
+    color: hsl(225, 40%, 25%);
+}
+
+.folder{
+    font-size: 1.2em;
+    width: 4.5em;
+    position: relative;
+    cursor: pointer;
+}
+.folder-icon{
+    font-size: 4em;
+    text-align: center;
+    height: 0.8em;
+    margin-bottom: 0.05em;
+    color: hsl(225, 40%, 35%);
+}
+.folder-icon i{
+    position: relative;
+    z-index: 1;
+    top: -0.15em;
+}
+.folder-disc{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    position: absolute;
+    font-size: 1.2em;
+    width: 100%;
+    text-align: center;
+    color: white;
+    top: 0.95em;
+    z-index: 2;
+}
+.folder-name{
+    font-size: 0.65em;
+    text-align: center;
+    line-height: 1.5em;
+    font-weight: 500;
+
+    color: hsl(225, 40%, 25%);
+}

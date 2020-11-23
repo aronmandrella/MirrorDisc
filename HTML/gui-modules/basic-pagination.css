@@ -1,0 +1,99 @@
+/* Kolory */
+.basic-pagination{
+    --surface-hsl: var(--basic-pagination-surface-hsl, 0, 0%, 100%);
+    --accent-hsl: var(--basic-pagination-accent-hsl, 225, 40%, 25%);
+}
+
+/* Pojemnik */
+.basic-pagination{
+    background: hsl(var(--surface-hsl));
+    color: hsl(var(--accent-hsl));
+
+    padding: 0.7em 1em;
+
+    display: flex;
+    align-items: center;
+}
+.basic-pagination[data-pages="0"] .basic-pagination-buttons{
+    display: none;
+}
+.basic-pagination[data-pages="0"] .basic-pagination-range{
+    opacity: 0.5;
+}
+
+/* Słowne określenie zakresu */
+.basic-pagination-range{
+    font-weight: 400;
+}
+.basic-pagination-range span{
+    font-weight: 400;
+}
+.basic-pagination-range span:empty::before{
+    content: "...";
+}
+
+/* Guziki zmiany zakresu */
+.basic-pagination-buttons{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+/* Reset buttona */
+.basic-pagination button{
+    border: none;
+    background: none;
+    outline: none;
+    font-weight: 500;
+}
+
+/* Dalsze style buttona*/
+.basic-pagination button{
+    cursor: pointer;
+    color: hsl(var(--accent-hsl), 0.9);
+
+    padding: 0.3em 0.3em;
+    margin: 0 0.3em;
+    border-radius: 0.5em;
+    min-width: 2em;
+    text-align: center;
+}
+.basic-pagination button:focus,
+.basic-pagination button:hover{
+    background: hsla(var(--accent-hsl), 0.15);
+    color: hsl(var(--accent-hsl), 1);
+}
+.basic-pagination button:active{
+    background: hsla(var(--accent-hsl), 0.25);
+}
+
+/* Zawartość buttona */
+.basic-pagination button.pagination-number::before{
+    content: attr(data-page);
+}
+
+/* Stany guzików zakresu */
+.basic-pagination button:disabled{
+    cursor: default;
+    color: hsl(var(--accent-hsl), 0.4);
+    background: none;
+}
+.basic-pagination button.pagination-dots{
+    border: 0px solid hsl(var(--accent-hsl));
+    border-radius: 0;
+    border-right-width: 1px;
+    padding: 0;
+    height: 1.2em;
+    min-width: 1px; width: 1px;
+}
+.basic-pagination button[data-show-dots="true"]{
+    display: block;
+}
+.basic-pagination button[data-show-dots="false"]{
+    display: none;
+}
+.basic-pagination button.active{
+    color: hsl(var(--surface-hsl));
+    background: hsla(var(--accent-hsl), 0.9);
+    box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.6);
+}

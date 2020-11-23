@@ -1,0 +1,153 @@
+/* Kolory */
+.settings-dialog{
+    --surface-hsl: var(--settings-dialog-surface-hsl, 0, 0%, 100%);
+    --accent-hsl: var(--settings-dialog-accent-hsl, 225, 40%, 25%);
+
+    --safe-hsl:     155, 100%, 30%;
+    --warning-hsl:  60, 100%, 30%;
+    --danger-hsl:   335, 100%, 30%;
+}
+
+/* Główny wrapper */
+.settings-dialog{
+    width: 100%;
+    height: 100%;
+
+    font-size: 14px;
+    color: hsl(var(--accent-hsl));
+    background-color: hsl(var(--surface-hsl));
+
+    border: 0px solid hsl(var(--accent-hsl));
+    border-bottom-width: 10px;
+}
+/* Wrapper na ustawienia */
+.settings-dialog-settings-wrapper{
+    max-height: 400px;
+    overflow-y: auto;
+}
+/* Ustawienia scrollbara */
+.settings-dialog-settings-wrapper::-webkit-scrollbar {
+    width: 8px;
+    background: black;
+} 
+.settings-dialog-settings-wrapper::-webkit-scrollbar-track {
+    background: hsl(var(--surface-hsl));
+}
+.settings-dialog-settings-wrapper::-webkit-scrollbar-thumb {
+    background: hsla(var(--accent-hsl), 1);
+    border: 0px solid hsl(var(--surface-hsl));
+    border-width: 2px 2px;
+}
+
+/* Typy kolorów */
+.settings-dialog *[data-color="default"]{
+    color: hsl(var(--accent-hsl));
+}
+.settings-dialog *[data-color="transparent"]{
+    color: hsl(var(--accent-hsl), 0.7);
+}
+.settings-dialog *[data-color="safe"]{
+    color: hsl(var(--safe-hsl));
+}
+.settings-dialog *[data-color="danger"]{
+    color: hsl(var(--danger-hsl));
+}
+
+
+/* Napis nad całym dialogiem */
+.settings-dialog-title{
+    font-size: 1.2em;
+    background-color: hsl(var(--accent-hsl));
+    color: hsl(var(--surface-hsl));
+    text-align: center;
+    font-weight: 500;
+    padding: 1em;
+    transition: all 1s;
+}
+
+
+/* Pojedyńcze ustawienie - pojemnik */
+.settings-dialog-setting{
+    padding: 1em 1.5em;
+    font-size: 13px;
+
+    border: 0 solid hsla(var(--accent-hsl), 0.5);
+    border-bottom-width: 1px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.settings-dialog-setting:last-of-type{
+    border-bottom-width: 0px;
+}
+
+
+/* Opis danego ustawienia*/
+.settings-dialog-setting-caption{
+    flex-grow: 1; flex-shrink: 1;
+    text-align: justify;
+    text-justify: inter-word;
+}
+.settings-dialog-setting-title{
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: 0.3em;
+}
+.settings-dialog-setting-detail{
+    opacity: 0.6;
+}
+.settings-dialog-setting-title .fa,
+.settings-dialog-setting-title .fas,
+.settings-dialog-setting-title .far,
+.settings-dialog-setting-title .fab{
+    margin-right: 0.3em;
+}
+.settings-dialog-platforms{
+}
+
+/* Ustawienia typu checkbox pojemniki */
+.settings-dialog-checkbox-setting{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+.settings-dialog-checkbox-setting > *{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.settings-dialog-checkbox-setting-checkbox{
+    flex-grow: 0; flex-shrink: 0;
+    padding-left: 2em;
+}
+/* Ustawienia typu checkbox wewnętrzne style */
+.settings-dialog-checkbox-setting-checkbox .basic-checkbox{
+    --basic-checkbox-body-hsl: var(--accent-hsl);
+    --basic-checkbox-mark-hsl: var(--surface-hsl);
+}
+
+/* Pole na wartości numeryczne */
+.settings-dialog-numeric-setting-input{
+    border-radius: 0.5em;
+    border: 1px solid hsla(var(--accent-hsl), 0.5);
+    background-color: hsla(var(--accent-hsl), 0.1);
+
+    font-size: 1.1em;
+    margin-top:  0.6em;
+    padding: 0.7em;
+
+    outline: none;
+    text-align: left;
+
+    font-weight: 500;
+    white-space: nowrap;
+}
+.settings-dialog-numeric-setting-input::after{
+    content: attr(data-unit);
+}
+.settings-dialog *::selection{
+    background: hsl(var(--accent-hsl), 0.3);
+    color: inherit;
+}

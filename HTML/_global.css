@@ -1,0 +1,171 @@
+/* Fonty */
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Regular.ttf');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-RegularItalic.ttf');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Medium.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-MediumItalic.ttf');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Bold.ttf');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-BoldItalic.ttf');
+    font-weight: 700;
+    font-style: italic;
+}
+
+:root {
+    font-family: 'Roboto';
+}
+*{ user-select: none; }
+
+body{
+    background: #e9eaee;
+    overflow-x: hidden;
+
+    color: rgb(38, 51, 89);
+}
+
+/* Tryb oczekiwania */
+body.wait-mode *{
+    cursor: wait !important;
+}
+.wait-overlay{
+    height: 100vh;
+    width: 100vw;
+    z-index: 2000;
+    display: none;
+}
+body.wait-mode .wait-overlay{
+    display: block;
+}
+
+
+.dialog{
+    width: 500px;
+    height: 500px;
+}
+.dialog-background{
+    height: 100vw; width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+}
+
+
+
+
+/* Ustawienia kolorów */
+:root{
+    --hue: 210;
+    --color-main-1-hsl: var(--hue), 50%, 40%;
+    --color-main-2-hsl: var(--hue), 25%, 25%;
+    --color-main-3-hsl: var(--hue), 25%, 25%;
+    --black-hsl: 0, 0%, 10%;
+    --white-surface-hsl: 0, 0%, 100%;
+}
+:root{
+    --matter-primary-rgb: 47, 63, 79;
+    --matter-error-rgb: 153, 0, 63;
+    --matter-warning-rgb: 153, 153, 0;
+    --matter-success-rgb: 0, 153, 89;
+}
+
+.basic-titlebar{
+    --basic-titlebar-surface-hsl: var(--color-main-3-hsl);
+    --basic-titlebar-accent-hsl: 0, 0%, 100%;
+}
+.basic-appbar{
+    --basic-appbar-surface-hsl: var(--white-surface-hsl);
+    --basic-appbar-accent-hsl: var(--color-main-3-hsl);
+}
+.basic-pagination{
+    --basic-pagination-surface-hsl: var(--color-main-3-hsl);
+    --basic-pagination-accent-hsl: 0, 0%, 100%;
+}
+.basic-table{
+    --basic-table-surface-hsl: var(--white-surface-hsl);
+    --basic-table-accent-hsl: var(--color-main-2-hsl);
+}
+.basic-table .basic-table-header th{
+    --surface-hsl: 0, 0%, 100%;
+    --accent-hsl: var(--color-main-3-hsl);
+}
+.basic-table-placeholder-icon,
+.basic-table-placeholder-text{
+    color: hsl(var(--color-main-3-hsl));
+}
+.basic-table .basic-checkbox{
+    --body-hsl: var(--color-main-3-hsl);
+    --mark-hsl: 0, 0%, 100%;
+}
+.basic-table .basic-table-sort{
+    color: hsl(var(--color-main-3-hsl));
+}
+
+.ctx-menu{
+    --ctx-menu-surface-hsl: var(--white-surface-hsl);
+    --ctx-menu-text-hsl: var(--color-main-3-hsl);
+}
+.progress-dialog{
+    --progress-dialog-surface-hsl: var(--white-surface-hsl);
+    --progress-dialog-accent-hsl: var(--color-main-3-hsl);
+}
+.settings-dialog{
+    --settings-dialog-surface-hsl: var(--white-surface-hsl);
+    --settings-dialog-accent-hsl: var(--color-main-3-hsl);
+}
+
+
+/* Dodana na szybko sekcja about */
+.about-dialog{
+    padding: 2em;
+    color: hsla(var(--color-main-3-hsl));
+    background-color: hsl(var(--white-surface-hsl));
+    text-shadow:
+        0 0 5px hsla(var(--white-surface-hsl)),
+        0 0 10px hsla(var(--white-surface-hsl)),
+        0 0 20px hsla(var(--white-surface-hsl)),
+        0 0 30px hsla(var(--white-surface-hsl)),
+        0 0 40px hsla(var(--white-surface-hsl));
+
+    background-image: linear-gradient(
+        hsla(var(--white-surface-hsl),0.9),
+        hsla(var(--white-surface-hsl),0.9)),
+        url("img/beach2.jpg");
+    background-size: cover;
+}
+.about-dialog-icon{
+    font-size: 5em;
+}
+.about-dialog-author{
+    font-size: 0.8em;
+    font-weight: 500;
+}
+.about-dialog-author-name{
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-bottom: 1.5em;
+}
+.about-dialog-date{
+    font-size: 0.8em;
+    font-weight: 500;
+}

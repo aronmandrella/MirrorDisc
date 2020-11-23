@@ -1,0 +1,27 @@
+.mirror-disc-app{
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Rozmiary wewnętrzych elementów */
+.mirror-disc-app > *{
+    flex-grow: 0; flex-shrink: 0;
+}
+.mirror-disc-app > .flink-table{
+    max-height: 200px;
+}
+.mirror-disc-app > .ftransfer-table{
+    flex-grow: 1; flex-shrink: 1;
+}
+
+
+
+
+.cy {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    background: #eee;
+}
