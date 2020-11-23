@@ -4,8 +4,8 @@
 
 **Autor**: Aron Mandrella
 
-## Interfejs graficzny (widok mobilny)
-![](https://github.com/aronmandrella/CwiczeniaWokalne/blob/main/-%20GIFs/Wokalne%20GUI%202.gif)
+## Interfejs graficzny
+![](https://github.com/aronmandrella/MirrorDisc/blob/main/MirrorDiscPreview.gif)
 
 ## Opis
 Wokaliści rozgrzewają się poprzez śpiewanie melodii granych na wybranym instrumencie. Można stworzyć nagranie takiej „rozgrzewki” jednak wówczas wokalista traci kontrolę nad przebiegiem ćwiczenia. W ramach tego projektu postanowiłem stworzyć aplikację mobilną / stronę internetową która automatyzuje proces odgrywania melodii i pozwala zachować pełną kontrolę nad przebiegiem ćwiczenia.
