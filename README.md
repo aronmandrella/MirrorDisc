@@ -1,11 +1,11 @@
 # MirrorDisc (2019)
 
-[![Thumbnail](https://github.com/aronmandrella/MirrorDisc/blob/main/GitHub_Thumbnail.png)](https://github.com/aronmandrella/MirrorDisc)
+![Thumbnail](https://raw.githubusercontent.com/aronmandrella/MirrorDisc/main/GitHub_Thumbnail.png]
 
 **Autor**: Aron Mandrella
 
 ## Interfejs graficzny
-![GUI-GIF](https://github.com/aronmandrella/MirrorDisc/blob/main/MirrorDiscPreview.gif)
+![GUI-GIF](https://raw.githubusercontent.com/aronmandrella/MirrorDisc/main/MirrorDiscPreview.gif)
 
 ## Opis
 Niniejszy program pozwala rekurencyjnie zsynchronizować dowolne dwa wskazane foldery. Pozwala wykryć usunięcie plików, dodanie plików, a opcjonalnie również zmianę nazwy i zmianę lokalizacji pliku. Wszystkie operacje które zostaną wykonane są wcześniej prezentowane w tabeli.
