@@ -1,8 +1,8 @@
 # MirrorDisc (2019)
 
-![Thumbnail](https://raw.githubusercontent.com/aronmandrella/MirrorDisc/main/GitHub_Thumbnail.png)
-
 **Autor**: Aron Mandrella
+
+![Thumbnail](https://raw.githubusercontent.com/aronmandrella/MirrorDisc/main/GitHub_Thumbnail.png)
 
 ## Interfejs graficzny
 ![GUI-GIF](https://raw.githubusercontent.com/aronmandrella/MirrorDisc/main/MirrorDiscPreview.gif)
