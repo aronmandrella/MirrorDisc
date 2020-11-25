@@ -12,7 +12,7 @@
     "build": "npm run pack:win64 && npm run pack:win32"
   },
   "author": "Aron Mandrella",
-  "license": "ISC",
+  "license": "",
   "dependencies": {
     "cp-file": "^7.0.0",
     "cytoscape": "^3.8.1",
