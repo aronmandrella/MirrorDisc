@@ -9,8 +9,6 @@ Niniejszy program pozwala rekurencyjnie zsynchronizować dowolne dwa wskazane fo
 
 [💾 Program do pobrania (Windows 10)](https://github.com/aronmandrella/MirrorDisc/releases/tag/v1.0)
 
-↩️ [Powrót do portfolio](https://github.com/aronmandrella/portfolio#spis-tre%C5%9Bci)
-
 ## 🧰 Wykorzystane technologie i narzędzia
 * **Node.js, NPM, JavaScript ES8, CSS, HTML**
 * **jQuery**
